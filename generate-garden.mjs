@@ -1,7 +1,8 @@
 // generate-garden.js
-require("dotenv").config();
-const fs = require("fs");
-const { request, gql } = require("graphql-request");
+import { request, gql } from "graphql-request";
+import dotenv from "dotenv";
+dotenv.config();
+import fs from "fs";
 
 const TOKEN = process.env.GITHUB_TOKEN;
 const USERNAME = process.env.GITHUB_USERNAME;
