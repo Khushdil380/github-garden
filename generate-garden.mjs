@@ -44,12 +44,9 @@ async function fetchContributionData() {
       query,
       { username: USERNAME },
       {
-        headers: {
         Authorization: `Bearer ${TOKEN}`,
-        },
-    } 
-  );
-  
+      }
+    );
     return data.user.contributionsCollection.contributionCalendar.weeks;
   } catch (error) {
     console.error("Error fetching GitHub data:", error);
