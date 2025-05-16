@@ -39,13 +39,14 @@ const query = gql`
 
 async function fetchContributionData() {
   try {
-    const data = await request({
-      url: ENDPOINT,
-      document: query,
-      variables: { username: USERNAME },
-      requestHeaders: HEADERS,
-    });
-
+    const data = await request(
+      ENDPOINT,
+      query,
+      { username: USERNAME },
+      {
+        Authorization: `Bearer ${TOKEN}`,
+      }
+    );
     return data.user.contributionsCollection.contributionCalendar.weeks;
   } catch (error) {
     console.error("Error fetching GitHub data:", error);

@@ -15,21 +15,21 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v3
         with:
-          node-version: '16'
+          node-version: '20'
 
       - name: Install Dependencies
-        run: npm install
+        run: npm ci
 
       - name: Run Generator Script
         run: node generate-garden.mjs
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          GITHUB_USERNAME: Khushdil380
+          GITHUB_USERNAME: ${{ secrets.GITHUB_USERNAME }}
 
       - name: Commit and Push SVG
         run: |
           git config --global user.name "GitHub Actions"
           git config --global user.email "actions@github.com"
           git add garden.svg
-          git commit -m "Update garden.svg 🌱"
+          git commit -m "Update garden.svg 🌱" || echo "No changes to commit"
           git push
