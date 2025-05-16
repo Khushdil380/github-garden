@@ -24,7 +24,7 @@ jobs:
         run: node generate-garden.mjs
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          GITHUB_USERNAME: ${{ secrets.GITHUB_USERNAME }}
+          GITHUB_USERNAME: ${{ secrets.MY_GITHUB_USERNAME }}
 
       - name: Commit and Push SVG
         run: |
