@@ -5,7 +5,7 @@ dotenv.config();
 import fs from "fs";
 
 const TOKEN = process.env.GITHUB_TOKEN;
-const USERNAME = process.env.MY_GITHUB_USERNAME;
+const USERNAME = process.env.GITHUB_USERNAME;
 
 const ENDPOINT = "https://api.github.com/graphql";
 const HEADERS = {
