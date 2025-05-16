@@ -43,8 +43,13 @@ async function fetchContributionData() {
       ENDPOINT,
       query,
       { username: USERNAME },
-      { Authorization: `Bearer ${TOKEN}` }
-    );
+      {
+        headers: {
+        Authorization: `Bearer ${TOKEN}`,
+        },
+    } 
+  );
+  
     return data.user.contributionsCollection.contributionCalendar.weeks;
   } catch (error) {
     console.error("Error fetching GitHub data:", error);
