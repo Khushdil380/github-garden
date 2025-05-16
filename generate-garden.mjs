@@ -43,9 +43,7 @@ async function fetchContributionData() {
       ENDPOINT,
       query,
       { username: USERNAME },
-      {
-        Authorization: `Bearer ${TOKEN}`,
-      }
+      { Authorization: `Bearer ${TOKEN}` }
     );
     return data.user.contributionsCollection.contributionCalendar.weeks;
   } catch (error) {
