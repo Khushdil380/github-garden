@@ -82,8 +82,8 @@ function formatDateLong(dateStr) {
 function generateSVG(weeks) {
   const boxSize = 14;
   const boxMargin = 3;
-  const xOffset = 40;
-  const yOffset = 40;
+  const xOffset = 10;
+  const yOffset = 10;
 
   // Build a map from date to contribution count
   const dateMap = {};
